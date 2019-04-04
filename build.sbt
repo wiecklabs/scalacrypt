@@ -1,3 +1,5 @@
+import sbt.Keys.crossScalaVersions
+
 lazy val root = project.in(file("."))
   .aggregate(scalacrypt)
   .settings(
@@ -14,6 +16,7 @@ lazy val scalacrypt = project.in(file("."))
     licenses := Seq("Apache" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
     homepage := Some(url("https://github.com/richard-w/scalacrypt")),
     scalaVersion := "2.12.8",
+    crossScalaVersions := Seq("2.11.12", "2.12.8"),
     scalacOptions ++= Seq("-feature", "-unchecked", "-deprecation", "-opt:_"),
     libraryDependencies ++= {
       Seq(
